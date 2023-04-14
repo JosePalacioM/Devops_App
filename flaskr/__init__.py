@@ -1,12 +1,12 @@
 from flask import Flask
 
 def create_app(config_name):
-    app = Flask(__name__)
+    application = Flask(__name__)
 
-    app.config['SQLALCHEMY_DATABASE_URI'] = ""
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    application.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:ABCD1234@db-black-list.cqhvrt5vquda.us-east-1.rds.amazonaws.com:5432/"
+    application.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-    if(app.config['SQLALCHEMY_DATABASE_URI'] == "" or app.config['SQLALCHEMY_DATABASE_URI'] is None):
-        app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///correos.db"
+    if(application.config['SQLALCHEMY_DATABASE_URI'] == "" or application.config['SQLALCHEMY_DATABASE_URI'] is None):
+        application.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///correos.db"
 
-    return app
+    return application
