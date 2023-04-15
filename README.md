@@ -23,9 +23,9 @@ Se debe estar en la carpeta **flaskr**
 3. Validar en la consola que se tiene activo el ambiente virtual, para desactivar env: `deactivate`
 4. Instalar requirements: `python3 -m pip install -r requirements.txt`
 5. Configurar base de datos SQLite: `export DATABASE_URL="sqlite:///correos.db"`
-5. Cambiar el directorio: `cd flaskr`
-6. Ejecutar aplicación Flask: `flask run`
-7. La aplicación queda ejecutando en el puerto 5000 del localhost: ```http://localhost:5000```
+6. Cambiar el directorio: `cd flaskr`
+7. Ejecutar aplicación Flask: `flask run`
+8. La aplicación queda ejecutando en el puerto 5000 del localhost: ```http://localhost:5000```
 
 
 
