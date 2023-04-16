@@ -1,0 +1,279 @@
+{
+	"info": {
+		"_postman_id": "ba9d6f0b-f63c-49cf-a758-e08e5d0c68be",
+		"name": "DevOps_Entrega1",
+		"description": "El objetivo de este microservicio es que cientos de sistemas internos puedan consultar si un email está en la lista negra global de la empresa o no, así como agregar emails a la lista negra global.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20261140"
+	},
+	"item": [
+		{
+			"name": "CreateBlackMail",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "KeyWord",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"usuarioPrueba167@gmail.com\",\r\n    \"app_uuid\": \"550e8400-e29b-41d4-a716-446655440000\",\r\n    \"blocked_reason\": \"There are lots of reasons to add this email to the black list\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/blacklists",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"blacklists"
+					]
+				},
+				"description": "Agrega un correo a la lista negra con los datos brindados, el token se puede introducir como una palabra estática. Los campos email, app_uuid y blocked_reason deben estar presentes en la solicitud, el correo no debe existir y el **app_uuid** no debe estar vacío."
+			},
+			"response": [
+				{
+					"name": "CreateBlackMail",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"usuarioPrueba167@gmail.com\",\r\n    \"app_uuid\": \"550e8400-e29b-41d4-a716-446655440000\",\r\n    \"blocked_reason\": \"There are lots of reasons to add this email to the black list\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://Appdevteam-env.eba-penzsey3.us-east-1.elasticbeanstalk.com/blacklists",
+							"protocol": "http",
+							"host": [
+								"Appdevteam-env",
+								"eba-penzsey3",
+								"us-east-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"blacklists"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 15 Apr 2023 23:17:33 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "304"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "nginx"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"mensaje\": \"La cuenta ha sido creada\",\n    \"cuenta\": {\n        \"blocked_reason\": \"There are lots of reasons to add this email to the black list\",\n        \"email\": \"usuarioPrueba167@gmail.com\",\n        \"created_at\": \"2023-04-15T23:17:33.220177\",\n        \"id\": 11,\n        \"ip\": \"35.175.196.214\",\n        \"app_uuid\": \"550e8400-e29b-41d4-a716-446655440000\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "ListBlackMail",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "KeyWord",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/blacklists/usuarioPrueba167@gmail.com",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"blacklists",
+						"usuarioPrueba167@gmail.com"
+					]
+				},
+				"description": "Retorna la información de un correo agregado previamente en la lista negra, solo un usuario autorizado puede realizar esta operación, el token se puede introducir como una palabra estática."
+			},
+			"response": [
+				{
+					"name": "ListBlackMail",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://Appdevteam-env.eba-penzsey3.us-east-1.elasticbeanstalk.com/blacklists/usuarioPrueba167@gmail.com",
+							"protocol": "http",
+							"host": [
+								"Appdevteam-env",
+								"eba-penzsey3",
+								"us-east-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"blacklists",
+								"usuarioPrueba167@gmail.com"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 15 Apr 2023 23:29:32 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "255"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "nginx"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"blocked_reason\": \"There are lots of reasons to add this email to the black list\",\n        \"email\": \"usuarioPrueba167@gmail.com\",\n        \"created_at\": \"2023-04-15T23:17:33.220177\",\n        \"id\": 11,\n        \"ip\": \"35.175.196.214\",\n        \"app_uuid\": \"550e8400-e29b-41d4-a716-446655440000\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Healthcheck",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/healthcheck",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"healthcheck"
+					]
+				},
+				"description": "Verifica si el microservicio se encuentra funcional, en caso de estar en linea, devuelve código 200."
+			},
+			"response": [
+				{
+					"name": "Healthcheck",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://Appdevteam-env.eba-penzsey3.us-east-1.elasticbeanstalk.com/healthcheck",
+							"protocol": "http",
+							"host": [
+								"Appdevteam-env",
+								"eba-penzsey3",
+								"us-east-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"healthcheck"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 15 Apr 2023 23:32:32 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "31"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "nginx"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"mensaje\": \"Endpoint activo\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://Appdevteam-env.eba-penzsey3.us-east-1.elasticbeanstalk.com",
+			"type": "string"
+		}
+	]
+}
