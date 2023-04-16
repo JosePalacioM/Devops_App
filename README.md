@@ -22,7 +22,7 @@ El microservicio de gestión de correos permite añadir cuentas de correo en la 
 
 ## Ejecución manual (Windows)
 
-Para la ejecución local del proyecto, es nevcsario cambiar el nombre del archivo **application.py** por **app.py**, asi mismo, dentro de este archivo, se debe cambiar la palabra **application** por **app**, debido a que así se podrá ejecutar por Flask.
+Para la ejecución local del proyecto, es nevcsario cambiar el nombre del archivo **application.py** por **app.py**. Asi mismo, dentro de este archivo, se debe cambiar la palabra **application** por **app**, debido a que así se podrá ejecutar por Flask.
 
 1. Crear ambiente virtual: `python3 -m venv .venv`
 2. Activar ambiente virtual: `source .venv/bin/activate`
@@ -34,11 +34,11 @@ Para la ejecución local del proyecto, es nevcsario cambiar el nombre del archiv
 
 # Estructura de carpetas
 
-├── .ebextensions # Archivos de información de despliege en en Elastic Beanstalk
-├── collections # Collecciones individuales de la aplicación
-├── flaskr # Código de la aplicación
-├── application.py # Punto de entrada de la aplicación
-├── requirements.txt # Archivo de requirements para funcionameinto de la aplicación
+├── .ebextensions # Archivos de información de despliege en en Elastic Beanstalk<br>
+├── collections # Collecciones individuales de la aplicación<br>
+├── flaskr # Código de la aplicación<br>
+├── application.py # Punto de entrada de la aplicación<br>
+├── requirements.txt # Archivo de requirements para funcionameinto de la aplicación<br>
 └── README.md # Estás aquí
 
 # Despliegue en AWS - Elastic Beanstalk
