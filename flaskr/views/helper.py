@@ -1,6 +1,7 @@
 from requests import Response, get
 from ..models import db
 
+
 class Helper():
 
     def get_client_ip(self):
