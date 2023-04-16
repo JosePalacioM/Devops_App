@@ -34,11 +34,11 @@ Para la ejecución local del proyecto, es nevcsario cambiar el nombre del archiv
 
 # Estructura de carpetas
 
-├── .ebextensions # Archivos de información de despliege en en Elastic Beanstalk<br>
-├── collections # Collecciones individuales de la aplicación<br>
-├── flaskr # Código de la aplicación<br>
-├── application.py # Punto de entrada de la aplicación<br>
-├── requirements.txt # Archivo de requirements para funcionameinto de la aplicación<br>
+├── .ebextensions # Archivos de información de despliege en en Elastic Beanstalk  
+├── collections # Collecciones individuales de la aplicación  
+├── flaskr # Código de la aplicación  
+├── application.py # Punto de entrada de la aplicación  
+├── requirements.txt # Archivo de requirements para funcionameinto de la aplicación  
 └── README.md # Estás aquí
 
 # Despliegue en AWS - Elastic Beanstalk
