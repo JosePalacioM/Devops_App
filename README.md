@@ -32,11 +32,20 @@ Para la ejecución local del proyecto, es nevcsario cambiar el nombre del archiv
 6. Ejecutar aplicación Flask: `flask run`
 7. La aplicación queda ejecutando en el puerto 5000 del localhost: `http://localhost:5000`
 
+## Ejecución de pruebas unitarias
+1. Para ejecutar todas las pruebas: `python -m unittest discover -s tests -v`
+2. Para ejecutar un conjunta de pruebas test_users.py: `python -m unittest test/test_blacklist.py`
+3. Para conocer la cobertura de pruebas: `python -m coverage run -m unittest` en caso de que no funcione esta, sebe ejecutar: `coverage run -m unittest tests/test_trayectos.py -v`
+4. Para el reporte de pruebas en consola: `python -m coverage report`
+5. Para el reporte detallado de las pruebas en archivo html: `python -m coverage html`
+
+
 # Estructura de carpetas
 
 ├── .ebextensions # Archivos de información de despliege en en Elastic Beanstalk  
 ├── collections # Collecciones individuales de la aplicación  
-├── flaskr # Código de la aplicación  
+├── flaskr # Código de la aplicación
+├── test # Pruebas unitarias  
 ├── application.py # Punto de entrada de la aplicación  
 ├── requirements.txt # Archivo de requirements para funcionameinto de la aplicación  
 └── README.md # Estás aquí

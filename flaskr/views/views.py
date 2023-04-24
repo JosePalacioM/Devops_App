@@ -57,7 +57,6 @@ class ViewGetMail(Resource):
         token = request.headers.get('Authorization', None)[7:]
         if token == KeyWord:
             try:
-                print("email:", blacklist_email)
                 query = MailBlacklist.query.filter(
                     MailBlacklist.email == blacklist_email).first()
 
@@ -74,9 +73,6 @@ class ViewGetMail(Resource):
 class ViewHealthCheck(Resource):
 
     def get(self):
-        try:
-            return {
-                "mensaje": "Endpoint activo"
-            }, 200
-        except Exception as err:
-            return helper.handle_exception(err)
+        return {
+            "mensaje": "Endpoint activo"
+        }, 200
