@@ -11,7 +11,14 @@ phases:
 
   build:
     commands:
-      - python -m unittest test/test_blacklist.py
+      - python -m pytest --junitxml=pytest_reports/pytest_report.xml
+
+reports:
+  pytest_reports:
+    files:
+      - pytest_report.xml
+    base-directory: pytest_reports/
+    file-format: JUNITXML
 
 artifacts:
   files:
