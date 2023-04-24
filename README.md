@@ -33,7 +33,7 @@ Para la ejecución local del proyecto, es nevcsario cambiar el nombre del archiv
 7. La aplicación queda ejecutando en el puerto 5000 del localhost: `http://localhost:5000`
 
 ## Ejecución de pruebas unitarias
-1. Para ejecutar todas las pruebas: `python -m unittest discover -s tests -v`
+1. Para ejecutar todas las pruebas: `python -m unittest discover -s test -v`
 2. Para ejecutar un conjunta de pruebas test_users.py: `python -m unittest test/test_blacklist.py`
 3. Para conocer la cobertura de pruebas: `python -m coverage run -m unittest` en caso de que no funcione esta, sebe ejecutar: `coverage run -m unittest tests/test_trayectos.py -v`
 4. Para el reporte de pruebas en consola: `python -m coverage report`
