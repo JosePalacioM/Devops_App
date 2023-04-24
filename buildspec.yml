@@ -8,6 +8,12 @@ phases:
   pre_build:
     commands:
       - pip install -r requirements.txt
+
+  build:
+    commands:
+      - coverage run -m --omit="*/usr/lib/*" unittest discover -s tests -v
+      - coverage report --fail-under=80
+
 artifacts:
   files:
     - '**/*'
