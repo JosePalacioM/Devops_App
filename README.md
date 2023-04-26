@@ -28,7 +28,7 @@ Para la ejecución local del proyecto, es nevcsario cambiar el nombre del archiv
 2. Activar ambiente virtual: `source .venv/bin/activate`
 3. Validar en la consola que se tiene activo el ambiente virtual, para desactivar env: `deactivate`
 4. Instalar requirements: `python3 -m pip install -r requirements.txt`
-5. Configurar base de datos SQLite: `export DATABASE_URL="sqlite:///correos.db"`
+5. Configurar base de datos SQLite: `export DATABASE_URL="sqlite:///block_email.db"`
 6. Ejecutar aplicación Flask: `flask run`
 7. La aplicación queda ejecutando en el puerto 5000 del localhost: `http://localhost:5000`
 
@@ -44,10 +44,10 @@ Para la ejecución local del proyecto, es nevcsario cambiar el nombre del archiv
 
 ├── .ebextensions # Archivos de información de despliege en en Elastic Beanstalk  
 ├── collections # Collecciones individuales de la aplicación  
-├── flaskr # Código de la aplicación
-├── test # Pruebas unitarias  
+├── flaskr # Código de la aplicación 
+├── test # Pruebas unitarias   
 ├── application.py # Punto de entrada de la aplicación  
-├── requirements.txt # Archivo de requirements para funcionameinto de la aplicación  
+├── requirements.txt # Archivo de requirements para funcionameinto de la aplicación   
 └── README.md # Estás aquí
 
 # Despliegue en AWS - Elastic Beanstalk

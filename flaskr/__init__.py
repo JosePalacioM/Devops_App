@@ -2,7 +2,7 @@ from flask import Flask
 import os
 
 DATABASE_URL = os.getenv(
-    'DATABASE_URL', 'postgresql://postgres:ABCD1234@db-black-list.cqhvrt5vquda.us-east-1.rds.amazonaws.com:5432/postgres')
+    'DATABASE_URL', 'sqlite:///block_email.db')
 
 
 def create_app(config_name):

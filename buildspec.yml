@@ -1,17 +1,19 @@
 version: 0.2
 
-env:
-  variables:
-    DATABASE_URL: "postgresql://postgres:ABCD1234@db-black-list.cqhvrt5vquda.us-east-1.rds.amazonaws.com:5432/postgres"
-
 phases:
   pre_build:
     commands:
+      - echo Entered the pre build phase ...
       - pip install -r requirements.txt
+    finally:
+      - echo Finish Pre Build Phase ...
 
   build:
     commands:
+      - echo Entered the build phase ...
       - python -m pytest --junitxml=pytest_reports/pytest_report.xml
+    finally:
+      - echo Build completed on `date`
 
 reports:
   pytest_reports:
