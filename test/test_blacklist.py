@@ -108,7 +108,7 @@ class TestUsuario(TestCase):
         response = self.client.get('/blacklists/{}'.format(self.bloqued_email), headers={
                                    'Content-Type': 'application/json', "Authorization": "Bearer {}".format('KeyWordInvalid')})
 
-        self.assertEqual(response.status_code, 400)
+        self.assertEqual(response.status_code, 401)
 
     def test_consultar_email_errado(self):
 
@@ -122,4 +122,4 @@ class TestUsuario(TestCase):
         response = self.client.get('/healthcheck',
                                    headers={'Content-Type': 'application/json'})
 
-        self.assertEqual(response.status_code, 201)
+        self.assertEqual(response.status_code, 200)
