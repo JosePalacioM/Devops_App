@@ -45,13 +45,13 @@ Para la ejecución local del proyecto, es nevcsario cambiar el nombre del archiv
 ├── .ebextensions # Archivos de información de despliege en en Elastic Beanstalk  
 ├── collections # Collecciones individuales de la aplicación  
 ├── flaskr # Código de la aplicación 
-├── test # Pruebas unitarias   
-├── application.py # Punto de entrada de la aplicación  
+├── test # Pruebas unitarias  
+├── application.py # Punto de entrada de la aplicación   
 ├── requirements.txt # Archivo de requirements para funcionameinto de la aplicación   
 └── README.md # Estás aquí
 
-# Despliegue en AWS - Elastic Beanstalk
-La aplicación se encuentra desplegada y administrada en Amazon Elastic Beanstalk, que es un servicio que ofrece AWS para la adminitración integral de aplicaciones WEB. Así mismo, la base de datos se encuentra administrada por el servicio de RDS también de AWS.
+# Despliegue en AWS
+La aplicación se encuentra desplegada y administrada en Amazon Elastic Beanstalk, que es un servicio que ofrece AWS para la adminitración integral de aplicaciones WEB. También se configuro un Pipe line de integración continua en Amazon Code Pipeline para realizar las pruebas unitarias de la aplicación y compilar el proyecto.
 
 - Para más información del despliegue en estos servicios, consultar la documentación adjunta de la entrega.
 - La documentación de las colecciones se puede revisar en la siguiente URL [Colecciones The Code Team](https://documenter.getpostman.com/view/20261140/2s93XyU3Nt) o revisar la carpeta **collections**
