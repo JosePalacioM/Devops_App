@@ -1,10 +1,11 @@
 {
 	"info": {
 		"_postman_id": "ba9d6f0b-f63c-49cf-a758-e08e5d0c68be",
-		"name": "DevOps_Entrega1",
+		"name": "Colecciones Devops - The Code Team",
 		"description": "El objetivo de este microservicio es que cientos de sistemas internos puedan consultar si un email está en la lista negra global de la empresa o no, así como agregar emails a la lista negra global.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "20261140"
+		"_exporter_id": "20261140",
+		"_collection_link": "https://www.postman.com/interstellar-meteor-354942/workspace/dllo-en-nube/collection/20261140-ba9d6f0b-f63c-49cf-a758-e08e5d0c68be?action=share&creator=20261140&source=collection_link"
 	},
 	"item": [
 		{
@@ -204,14 +205,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://Appdevteam-env.eba-penzsey3.us-east-1.elasticbeanstalk.com/healthcheck",
-							"protocol": "http",
+							"raw": "{{url}}/healthcheck",
 							"host": [
-								"Appdevteam-env",
-								"eba-penzsey3",
-								"us-east-1",
-								"elasticbeanstalk",
-								"com"
+								"{{url}}"
 							],
 							"path": [
 								"healthcheck"
@@ -272,7 +268,7 @@
 	"variable": [
 		{
 			"key": "url",
-			"value": "http://Appdevteam-env.eba-penzsey3.us-east-1.elasticbeanstalk.com",
+			"value": "http://Pipelinedevteam-env.eba-ma9ijkd6.us-east-1.elasticbeanstalk.com",
 			"type": "string"
 		}
 	]

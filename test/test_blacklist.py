@@ -42,7 +42,7 @@ class TestUsuario(TestCase):
         response = self.client.post('/blacklists', data=json.dumps(new_block), headers={
                                     'Content-Type': 'application/json', "Authorization": "Bearer {}".format('KeyWord')})
 
-        self.assertEqual(response.status_code, 202)
+        self.assertEqual(response.status_code, 200)
 
     def test_bloquear_email_existente(self):
 
@@ -81,7 +81,7 @@ class TestUsuario(TestCase):
         response = self.client.post('/blacklists', data=json.dumps(new_block), headers={
                                     'Content-Type': 'application/json'})
 
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 401)
 
     def test_bloquear_email_con_token_invalido(self):
 
@@ -122,4 +122,4 @@ class TestUsuario(TestCase):
         response = self.client.get('/healthcheck',
                                    headers={'Content-Type': 'application/json'})
 
-        self.assertEqual(response.status_code, 404)
+        self.assertEqual(response.status_code, 200)
