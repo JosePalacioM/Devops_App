@@ -119,7 +119,7 @@ class TestUsuario(TestCase):
 
     def test_healthcheck(self):
 
-        response = self.client.get('/healthcheck',
+        response = self.client.get('/',
                                    headers={'Content-Type': 'application/json'})
 
         self.assertEqual(response.status_code, 200)
