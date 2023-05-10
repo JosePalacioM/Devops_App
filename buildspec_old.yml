@@ -1,0 +1,27 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo Entered the pre build phase ...
+      - pip install -r requirements.txt
+    finally:
+      - echo Finish Pre Build Phase ...
+
+  build:
+    commands:
+      - echo Entered the build phase ...
+      - python -m pytest --junitxml=pytest_reports/pytest_report.xml
+    finally:
+      - echo Build completed on `date`
+
+reports:
+  pytest_reports:
+    files:
+      - pytest_report.xml
+    base-directory: pytest_reports/
+    file-format: JUNITXML
+
+artifacts:
+  files:
+    - '**/*'

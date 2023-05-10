@@ -3,17 +3,32 @@ version: 0.2
 phases:
   pre_build:
     commands:
-      - echo Entered the pre build phase ...
+      - echo Pre build started on `date` ...
       - pip install -r requirements.txt
+      - echo Logging in to Amazon ECR ...
+      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 729930084599.dkr.ecr.us-east-1.amazonaws.com
     finally:
       - echo Finish Pre Build Phase ...
-
   build:
     commands:
-      - echo Entered the build phase ...
+      - echo Build started on `date`
+      - echo Building the Docker image ...          
+      - docker build -t devops_app .
+      - docker tag devops_app:latest 729930084599.dkr.ecr.us-east-1.amazonaws.com/devops_app:latest
       - python -m pytest --junitxml=pytest_reports/pytest_report.xml
     finally:
       - echo Build completed on `date`
+  post_build:
+    commands:
+      - echo Post Build started on `date`
+      - echo Pushing the Docker image ...
+      - docker push 729930084599.dkr.ecr.us-east-1.amazonaws.com/devops_app:latest
+      - echo Writing Image Definitions file...
+      - printf '[{"name":"Container-devops-app","imageUri":"729930084599.dkr.ecr.us-east-1.amazonaws.com/devops_app:latest"}]' > imagedefinitions.json
+      - printf '{"ImageURI":"729930084599.dkr.ecr.us-east-1.amazonaws.com/devops_app:latest"}' > imageDetail.json
+      - cat imagedefinitions.json
+    finally:
+      - echo Post Build completed on `date`
 
 reports:
   pytest_reports:
@@ -25,3 +40,13 @@ reports:
 artifacts:
   files:
     - '**/*'
+    - imagedefinitions.json
+    - imageDetail.json
+  secondary-artifacts:
+    DefinitionArtifact:
+      files:
+        - appspec.yaml
+        - taskdef.json
+    ImageArtifact:
+      files:
+        - imageDetail.json

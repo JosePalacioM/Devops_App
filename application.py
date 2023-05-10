@@ -12,9 +12,9 @@ db.create_all()
 
 api = Api(application)
 
-api.add_resource(ViewHealthCheck, '/healthcheck')
+api.add_resource(ViewHealthCheck, '/')
 api.add_resource(ViewCreateMail, '/blacklists')
 api.add_resource(ViewGetMail, '/blacklists/<string:blacklist_email>')
 
 if __name__ == "__main__":
-    application.run(port=5000, debug=True)
+    application.run(host = "0.0.0.0", port = 5000, debug = True)
