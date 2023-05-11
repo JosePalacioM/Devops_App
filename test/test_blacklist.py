@@ -42,7 +42,7 @@ class TestUsuario(TestCase):
         response = self.client.post('/blacklists', data=json.dumps(new_block), headers={
                                     'Content-Type': 'application/json', "Authorization": "Bearer {}".format('KeyWord')})
 
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 300)
 
     def test_bloquear_email_existente(self):
 
@@ -101,7 +101,7 @@ class TestUsuario(TestCase):
         response = self.client.get('/blacklists/{}'.format(self.bloqued_email), headers={
                                    'Content-Type': 'application/json', "Authorization": "Bearer {}".format('KeyWord')})
 
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 300)
 
     def test_consultar_email_bloqueado_sin_token(self):
 
@@ -122,4 +122,4 @@ class TestUsuario(TestCase):
         response = self.client.get('/',
                                    headers={'Content-Type': 'application/json'})
 
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 300)

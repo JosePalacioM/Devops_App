@@ -1,13 +1,13 @@
-# Entrega No. 3: The Code Team 
+# Entrega No. 3 - Entrega Continua: The Code Team 
 
-**Integrantes:**
+## Integrantes
 
-|Nombre|Usuario Github|Correo Uniandes|
-|----|----|----|
-|Oscar Andrés Alba Barragán|AAlbaB|o.alba@uniandes.edu.co|
-|Edwin Andrés Tapia Lasso|casetl|e.tapia@uniandes.edu.co|
-|Manuel Fernando Morales Sanchez|manuel-morales-sa|mf.moraless1@uniandes.edu.co|
-|José Alexander Palacio Muñoz|JosePalacioM|j.palaciom@uniandes.edu.co|
+|Nombre| Correo Uniandes|
+|------|------|
+|Oscar Andrés Alba Barragán| o.alba@uniandes.edu.co|
+|Edwin Andrés Tapia Lasso| e.tapia@uniandes.edu.co|
+|Manuel Fernando Morales Sanchez| mf.moraless1@uniandes.edu.co|
+|José Alexander Palacio Muñoz| j.palaciom@uniandes.edu.co|
 
 # Microservicio Gestión de correos
 
@@ -37,18 +37,25 @@ El microservicio de gestión de correos permite añadir cuentas de correo en la 
 9. Para el reporte detallado de las pruebas en archivo html: `python -m coverage html`
 
 
-# Estructura de carpetas
+# Estructura de archivos y carpetas
 
-├── .ebextensions # Archivos de información de despliege en en Elastic Beanstalk  
-├── collections # Collecciones individuales de la aplicación  
+├── .ebextensions # Archivos de información de despliege en Elastic Beanstalk  
+├── collections # Collecciones de la aplicación (Recomendado usar Postman)  
 ├── flaskr # Código de la aplicación  
-├── test # Pruebas unitarias  
-├── application.py # Punto de entrada de la aplicación   
-├── requirements.txt # Archivo de requirements para funcionameinto de la aplicación   
-└── README.md # Estás aquí
+├── test # Pruebas unitarias   
+├── .gitignore # Archivos ignorados para git  
+├── application.py # Punto de entrada de la aplicación  
+├── appspec.json # Archivo utilizado por CodeDeploy para gestionar un despliegue  
+├── buildspec_old.yml # Archivo con los comandos de CodeBuild que ejecutará durante cada fase de la compilación (Entrega dos)   
+├── buildspec.yml # Archivo con los comandos de CodeBuild que ejecutará durante cada fase de la compilación (Entrega tres)   
+├── Dockerfile # Archivo de Docker para despliegue  
+├── README.md # **Estás aquí**  
+├── requirements.txt # Archivo de requirements para funcionameinto de la aplicación    
+└── taskdef.json # Archivo que contiene toda la definición de tareas que utiliza ECS
 
 # Despliegue en AWS
-La aplicación se encuentra desplegada y administrada en Amazon Elastic Beanstalk, que es un servicio que ofrece AWS para la adminitración integral de aplicaciones WEB. También se configuro un Pipe line de integración continua en Amazon Code Pipeline para realizar las pruebas unitarias de la aplicación y compilar el proyecto.
+La aplicación se encuentra desplegada y administrada en **AWS Elastic Container Service** que es un servicio de administración de contenedores muy escalable y rápido que facilita la ejecución, la detención y la administración de contenedores en un clúster.
+Por otro lado se configuró un Pipeline en **AWS CodePipeline** que es un servicio de integración y entrega continuas (CI/CD), para realizar actualizaciones de aplicaciones e infraestructura rápidas y confiables. CodePipeline compila, prueba e implementa el código cada vez que se produce un cambio, de acuerdo con los modelos de procesamiento de lanzamiento que defina.
 
 - Para más información del despliegue en estos servicios, consultar la documentación adjunta de la entrega.
 - La documentación de las colecciones se puede revisar en la siguiente URL [Colecciones The Code Team](https://documenter.getpostman.com/view/20261140/2s93XyU3Nt) o revisar la carpeta **collections**
