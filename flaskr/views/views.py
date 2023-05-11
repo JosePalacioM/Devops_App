@@ -74,5 +74,5 @@ class ViewHealthCheck(Resource):
 
     def get(self):
         return {
-            "mensaje": "Endpoint activo"
+            "mensaje": "Pipeline de CI/CD funcionando correctamente"
         }, 200
