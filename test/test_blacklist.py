@@ -122,4 +122,5 @@ class TestUsuario(TestCase):
         response = self.client.get('/',
                                    headers={'Content-Type': 'application/json'})
 
-        self.assertEqual(response.status_code, 202)
+        self.assertEqual(response.status_code, 200)
+        

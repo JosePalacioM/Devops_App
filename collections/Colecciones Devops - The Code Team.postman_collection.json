@@ -188,12 +188,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/healthcheck",
+					"raw": "{{url}}/",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
-						"healthcheck"
+						""
 					]
 				},
 				"description": "Verifica si el microservicio se encuentra funcional, en caso de estar en linea, devuelve código 200."
@@ -205,12 +205,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/healthcheck",
+							"raw": "{{url}}/",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
-								"healthcheck"
+								""
 							]
 						}
 					},
@@ -220,7 +220,7 @@
 					"header": [
 						{
 							"key": "Date",
-							"value": "Sat, 15 Apr 2023 23:32:32 GMT"
+							"value": "Thu, 11 May 2023 23:05:34 GMT"
 						},
 						{
 							"key": "Content-Type",
@@ -228,7 +228,7 @@
 						},
 						{
 							"key": "Content-Length",
-							"value": "31"
+							"value": "65"
 						},
 						{
 							"key": "Connection",
@@ -236,11 +236,11 @@
 						},
 						{
 							"key": "Server",
-							"value": "nginx"
+							"value": "Werkzeug/2.2.3 Python/3.9.16"
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"mensaje\": \"Endpoint activo\"\n}"
+					"body": "{\n    \"mensaje\": \"Pipeline de CI/CD funcionando correctamente\"\n}"
 				}
 			]
 		}
@@ -268,7 +268,7 @@
 	"variable": [
 		{
 			"key": "url",
-			"value": "http://Pipelinedevteam-env.eba-ma9ijkd6.us-east-1.elasticbeanstalk.com",
+			"value": "http://LB-devops-app-1663411983.us-east-1.elb.amazonaws.com",
 			"type": "string"
 		}
 	]

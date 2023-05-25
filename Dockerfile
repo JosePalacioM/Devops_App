@@ -15,10 +15,19 @@ RUN python -m pip install -r requirements.txt
 # Copy Project
 COPY . /app
 
-# Creates a non-root user with an explicit UID and adds permission to access the /app folder
-RUN adduser -u 5678 --disabled-password --gecos "" appuser && chown -R appuser /app
-USER appuser
-
+# Expose port
 EXPOSE 5000
 
 CMD ["python3", "application.py"]
+
+# New Relic Agent
+RUN pip install newrelic
+ENV NEW_RELIC_APP_NAME="BlackList_PRD"
+ENV NEW_RELIC_LOG=stdout
+ENV NEW_RELIC_DISTRIBUTED_TRACING_ENABLED=true
+
+# INGEST_License
+ENV NEW_RELIC_LICENSE_KEY=a84e6be62d46acc823750b60bea76f5e5c1cNRAL
+ENV NEW_RELIC_LOG_LEVEL=info
+
+ENTRYPOINT ["newrelic-admin", "run-program"]

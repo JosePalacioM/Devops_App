@@ -75,4 +75,4 @@ class ViewHealthCheck(Resource):
     def get(self):
         return {
             "mensaje": "Pipeline de CI/CD funcionando correctamente"
-        }, 202
+        }, 200

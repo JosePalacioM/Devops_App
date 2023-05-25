@@ -23,6 +23,10 @@ phases:
       - echo Post Build started on `date`
       - echo Pushing the Docker image ...
       - docker push 729930084599.dkr.ecr.us-east-1.amazonaws.com/devops_app:latest
+      - echo Writing Image Definitions file...
+      - printf '[{"name":"Container-devops-app","imageUri":"729930084599.dkr.ecr.us-east-1.amazonaws.com/devops_app:latest"}]' > imagedefinitions.json
+      - printf '{"ImageURI":"729930084599.dkr.ecr.us-east-1.amazonaws.com/devops_app:latest"}' > imageDetail.json
+      - cat imagedefinitions.json
     finally:
       - echo Post Build completed on `date`
 
@@ -36,3 +40,13 @@ reports:
 artifacts:
   files:
     - '**/*'
+    - imagedefinitions.json
+    - imageDetail.json
+  secondary-artifacts:
+    DefinitionArtifact:
+      files:
+        - appspec.yaml
+        - taskdef.json
+    ImageArtifact:
+      files:
+        - imageDetail.json
