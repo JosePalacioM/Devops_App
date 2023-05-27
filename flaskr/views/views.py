@@ -54,20 +54,24 @@ class ViewCreateMail(Resource):
 class ViewGetMail(Resource):
 
     def get(self, blacklist_email):
-        token = request.headers.get('Authorization', None)[7:]
-        if token == KeyWord:
-            try:
-                query = MailBlacklist.query.filter(
-                    MailBlacklist.email == blacklist_email).first()
+        try:
+            token = request.headers.get('Authorization', None)[7:]
+            if token == KeyWord:
+                try:
+                    query = MailBlacklist.query.filter(
+                        MailBlacklist.email == blacklist_email).first()
 
-                if query == None:
-                    return {'mensaje': 'No existe ese correo en la lista negra'}, 404
-                return [mailblacklist_schema.dump(query)]
-            except Exception as err:
-                return {'mensaje': 'Ha ocurrido un error', 'error': str(err)}, 400
+                    if query == None:
+                        return {'mensaje': 'No existe ese correo en la lista negra'}, 404
+                    return [mailblacklist_schema.dump(query)]
+                except Exception as err:
+                    return {'mensaje': 'Ha ocurrido un error', 'error': str(err)}, 400
 
-        else:
-            return {'mensaje': 'Por favor ingresar un token válido'}, 401
+            else:
+                return {'mensaje': 'Por favor ingresar un token válido'}, 401
+                
+        except Exception as e:
+            return {'mensaje': 'Por favor ingresar un token', 'error': str(e)}, 401
 
 
 class ViewHealthCheck(Resource):
