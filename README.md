@@ -1,4 +1,4 @@
-# Entrega No. 3 - Entrega Continua: The Code Team 
+# Entrega No. 4 - Monitoreo Continuo: The Code Team 
 
 ## Integrantes
 
@@ -46,15 +46,16 @@ El microservicio de gestión de correos permite añadir cuentas de correo en la 
 ├── .gitignore # Archivos ignorados para git  
 ├── application.py # Punto de entrada de la aplicación  
 ├── appspec.json # Archivo utilizado por CodeDeploy para gestionar un despliegue  
-├── buildspec_old.yml # Archivo con los comandos de CodeBuild que ejecutará durante cada fase de la compilación (Entrega dos)   
-├── buildspec.yml # Archivo con los comandos de CodeBuild que ejecutará durante cada fase de la compilación (Entrega tres)   
+├── buildspec_v1.yml # Archivo con los comandos de CodeBuild que ejecutará durante cada fase de la compilación (Entrega dos)   
+├── buildspec_v2.yml # Archivo con los comandos de CodeBuild que ejecutará durante cada fase de la compilación (Entrega tres)
+├── buildspec_v3.yml # Archivo con los comandos de CodeBuild que ejecutará durante cada fase de la compilación (Entrega cuatro)     
 ├── Dockerfile # Archivo de Docker para despliegue  
 ├── README.md # **Estás aquí**  
 ├── requirements.txt # Archivo de requirements para funcionameinto de la aplicación    
 └── taskdef.json # Archivo que contiene toda la definición de tareas que utiliza ECS
 
 # Despliegue en AWS
-La aplicación se encuentra desplegada y administrada en **AWS Elastic Container Service** que es un servicio de administración de contenedores muy escalable y rápido que facilita la ejecución, la detención y la administración de contenedores en un clúster.
+La aplicación se encuentra desplegada y administrada en **AWS Elastic Beanstalk** que es un servicio para implementar y escalar servicios y aplicaciones web.
 Por otro lado se configuró un Pipeline en **AWS CodePipeline** que es un servicio de integración y entrega continuas (CI/CD), para realizar actualizaciones de aplicaciones e infraestructura rápidas y confiables. CodePipeline compila, prueba e implementa el código cada vez que se produce un cambio, de acuerdo con los modelos de procesamiento de lanzamiento que defina.
 
 - Para más información del despliegue en estos servicios, consultar la documentación adjunta de la entrega.
